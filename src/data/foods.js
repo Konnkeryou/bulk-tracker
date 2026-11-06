@@ -34,5 +34,6 @@ export const FOODS = Object.freeze({
   soy_milk: { name: 'Soy milk, regular', kcal: 54, protein: 3.3, fat: 1.8, carbs: 6.3, audPerKg: 2.5, src: 'USDA' },
   greek_yoghurt: { name: 'Greek yoghurt, full fat', kcal: 97, protein: 9.0, fat: 5.0, carbs: 4.0, audPerKg: 7, src: 'USDA' },
   wraps: { name: 'Flour wraps', kcal: 310, protein: 8.5, fat: 7.5, carbs: 50, audPerKg: 10, src: 'USDA approx' },
+  egg: { name: 'Eggs, whole (≈50 g each without shell)', kcal: 143, protein: 12.6, fat: 9.5, carbs: 0.7, audPerKg: 12, src: 'USDA' },
   hummus: { name: 'Hummus', kcal: 166, protein: 7.9, fat: 9.6, carbs: 14.3, audPerKg: 14, src: 'USDA' },
 });

@@ -7,6 +7,8 @@ import { bodyweight, targetRate, calibration, suggestedStart, weeklySuggestion, 
 import { checkpointInfo } from '../../core/review.js';
 
 const QUICK = ['big_shake', 'pb_honey_shake', 'yoghurt_bowl'];
+// Maintenance is computed from the first 14 days of logs whatever you eat, so keep showing it a week past.
+const CALIBRATION_VISIBLE_DAYS = 21;
 
 export function render(state, { today }) {
   const s = state.settings;
@@ -33,7 +35,9 @@ export function render(state, { today }) {
     <p>${n(totals.protein)} / ${n(protein.target)} g protein <span class="muted">(${n(protein.min)}–${n(protein.max)})</span></p>${bar(totals.protein, protein.target)}
     <div class="chips">${QUICK.map((id) => `<button data-action="quickMeal" data-id="${id}">+ ${esc(MEALS_BY_ID[id].name)} <small>${n(MEALS_BY_ID[id].kcal)} kcal</small></button>`).join('')}</div>`);
 
-  return `<p class="lede">${esc(header)}</p>${weigh}${intake}${s.bulkStartDate ? suggestionCard(state, today) : calibrationCard(state, today)}`;
+  const showCalibration = !s.bulkStartDate || calibration(state, today).day <= CALIBRATION_VISIBLE_DAYS;
+  const cards = [s.bulkStartDate ? suggestionCard(state, today) : '', showCalibration ? calibrationCard(state, today) : ''].join('');
+  return `<p class="lede">${esc(header)}</p>${weigh}${intake}${cards}`;
 }
 
 function calibrationCard(state, today) {
@@ -47,7 +51,7 @@ function calibrationCard(state, today) {
   return card('Calibration done', `${progress}
     <p>Maintenance ≈ <b>${start.maintenance}</b> kcal (avg intake ${n(r.avgIntake)} kcal, weight change ${signed(r.weeklyChange)} kg/wk).</p>
     <p>To hit the goal you need ${signed(start.rate)} kg/wk → start at <b>${start.target}</b> kcal.</p>
-    <button data-action="startBulk" data-kcal="${start.target}" data-maint="${start.maintenance}">Start bulk at ${start.target} kcal</button>`, 'highlight');
+    <button data-action="startBulk" data-kcal="${start.target}" data-maint="${start.maintenance}">${state.settings.bulkStartDate ? 'Set target to' : 'Start bulk at'} ${start.target} kcal</button>`, 'highlight');
 }
 
 function suggestionCard(state, today) {
@@ -78,8 +82,8 @@ export const actions = {
     const maint = Number(el.dataset.maint);
     store.update((st) => ({
       ...st,
-      settings: { ...st.settings, bulkStartDate: today, maintenanceKcal: maint, targetKcal: kcal, lastAdjustmentDate: today },
-      calorieLog: append(st.calorieLog, { date: today, targetKcal: kcal, reason: `Start: maintenance ${maint}` }),
+      settings: { ...st.settings, bulkStartDate: st.settings.bulkStartDate || today, maintenanceKcal: maint, targetKcal: kcal, lastAdjustmentDate: today },
+      calorieLog: append(st.calorieLog, { date: today, targetKcal: kcal, reason: `Calibrated maintenance ${maint}` }),
     }));
     return `Bulk started at ${kcal} kcal`;
   },

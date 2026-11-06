@@ -1,5 +1,5 @@
 // Batch recipes: few ingredients, oven / air fryer / Dutch oven, halal, no pork, no eggplant,
-// fish only salmon or tuna, no eggs, no drinking milk. Grams are raw weights for the whole batch.
+// fish only salmon or tuna, no drinking milk. Grams are raw weights for the whole batch.
 
 export const RECIPES = Object.freeze([
   {
@@ -46,6 +46,16 @@ export const RECIPES = Object.freeze([
     id: 'lamb_kofta_wraps', kind: 'main', name: 'Lamb kofta wraps + garlic yoghurt', servings: 4,
     method: 'Mix mince, grated onion, cumin, salt. Shape 12 koftas. Air fry 200°C 10–12 min. Wraps, yoghurt sauce, lettuce, chilli.',
     ingredients: [{ food: 'lamb_mince', g: 800 }, { food: 'onion', g: 150 }, { food: 'wraps', g: 400 }, { food: 'greek_yoghurt', g: 300 }],
+  },
+  {
+    id: 'beef_shakshuka', kind: 'main', name: 'Beef & egg shakshuka + wraps', servings: 4,
+    method: 'Dutch oven: brown mince + onion, add tomatoes, cumin, paprika, chilli; simmer 10 min. Make 8 wells, crack in eggs. Oven 190°C 12–15 min. Scoop with warm wraps.',
+    ingredients: [{ food: 'beef_mince', g: 500 }, { food: 'egg', g: 400 }, { food: 'tomato_tin', g: 800 }, { food: 'onion', g: 150 }, { food: 'olive_oil', g: 20 }, { food: 'wraps', g: 400 }],
+  },
+  {
+    id: 'chicken_egg_fried_rice', kind: 'main', name: 'Chicken & egg fried rice', servings: 4,
+    method: 'Cook rice ahead and chill. Air fry diced thighs 200°C 12 min. Big pan: oil, scramble eggs, add rice, veg, chicken, soy. Keeps 4 days in the fridge.',
+    ingredients: [{ food: 'chicken_thigh', g: 600 }, { food: 'egg', g: 300 }, { food: 'rice', g: 400 }, { food: 'frozen_veg', g: 400 }, { food: 'soy_sauce', g: 60 }, { food: 'olive_oil', g: 30 }],
   },
   {
     id: 'big_shake', kind: 'shake', name: 'Big shake (oat-PB-banana)', servings: 1,

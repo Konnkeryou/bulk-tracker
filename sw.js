@@ -1,7 +1,7 @@
 // Offline-first: precache the app shell, serve cache-first, refresh in the background.
 // Bump VERSION whenever files change so phones pick up the update.
 
-const VERSION = 'bulk-v1';
+const VERSION = 'bulk-v2';
 const SHELL = [
   './', './index.html', './styles.css', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png',

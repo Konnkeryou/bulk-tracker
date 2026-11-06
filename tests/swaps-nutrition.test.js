@@ -27,7 +27,7 @@ test('every recipe references known foods and has positive macros', () => {
 });
 
 test('no recipe uses an excluded food', () => {
-  const banned = /pork|bacon|ham\b|eggplant|aubergine|prawn|shrimp|oyster|mussel|squid|crab|^eggs?$|^milk$|cows?_milk/i;
+  const banned = /pork|bacon|ham\b|eggplant|aubergine|prawn|shrimp|oyster|mussel|squid|crab|^milk$|cows?_milk/i;
   for (const r of RECIPES) for (const i of r.ingredients) assert.ok(!banned.test(i.food), `${r.id}: ${i.food}`);
   const fish = RECIPES.flatMap((r) => r.ingredients.map((i) => i.food)).filter((f) => /fish|cod|barramundi|snapper|tuna|salmon/.test(f));
   assert.ok(fish.every((f) => /tuna|salmon/.test(f)), `fish other than salmon/tuna: ${fish}`);

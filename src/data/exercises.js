@@ -33,6 +33,8 @@ export const EXERCISES = Object.freeze([
   ex('barbell_row', 'Barbell row', 'h_pull', 'h_pull', ['upper_back', 'lats'], { barbell: true }),
   ex('ring_row', 'Ring row (feet elevated = harder)', 'h_pull', 'h_pull', ['upper_back', 'lats'], { bodyweight: true }),
   ex('ring_face_pull', 'Ring face pull', 'rear_delt', 'h_pull', ['rear_delts', 'upper_back']),
+  ex('plate_lateral_raise', 'Lateral raise holding 5 kg plates', 'side_delt', 'v_push', ['side_delts']),
+  ex('cable_lateral_raise', 'Cable lateral raise / Y-raise', 'side_delt', 'v_push', ['side_delts']),
   ex('barbell_curl', 'Barbell curl', 'biceps', 'arms', ['biceps']),
   ex('ring_curl', 'Ring curl', 'biceps', 'arms', ['biceps'], { bodyweight: true }),
   ex('cable_pushdown', 'Cable pushdown', 'triceps', 'arms', ['triceps']),
