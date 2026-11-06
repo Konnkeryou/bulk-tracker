@@ -1,0 +1,38 @@
+// Per-100 g nutrition (raw unless stated). Values from USDA FoodData Central (SR Legacy) and
+// AFCD (Food Standards Australia NZ) generic entries, rounded. Brand products vary; check labels.
+// audPerKg: rough Nov-2026 prices at Coles/Woolworths/Aldi or a halal butcher. Update to your receipts.
+
+export const FOODS = Object.freeze({
+  chicken_thigh: { name: 'Chicken thigh fillet, skinless (halal)', kcal: 120, protein: 19.7, fat: 4.1, carbs: 0, audPerKg: 15, src: 'USDA' },
+  beef_mince: { name: 'Beef mince ~10% fat (halal)', kcal: 176, protein: 20.0, fat: 10.0, carbs: 0, audPerKg: 15, src: 'USDA' },
+  beef_chuck: { name: 'Beef chuck/blade, trimmed (halal)', kcal: 190, protein: 18.5, fat: 12.5, carbs: 0, audPerKg: 20, src: 'USDA/AFCD approx' },
+  lamb_shoulder: { name: 'Lamb shoulder, boneless (halal)', kcal: 264, protein: 16.6, fat: 21.4, carbs: 0, audPerKg: 18, src: 'USDA' },
+  lamb_mince: { name: 'Lamb mince (halal)', kcal: 282, protein: 16.6, fat: 23.4, carbs: 0, audPerKg: 17, src: 'USDA' },
+  salmon: { name: 'Salmon fillet, Atlantic', kcal: 208, protein: 20.4, fat: 13.4, carbs: 0, audPerKg: 38, src: 'USDA' },
+  tuna_oil: { name: 'Tuna in oil, drained', kcal: 198, protein: 29.1, fat: 8.2, carbs: 0, audPerKg: 20, src: 'USDA' },
+  rice: { name: 'White rice, dry', kcal: 360, protein: 6.6, fat: 0.6, carbs: 79, audPerKg: 2.5, src: 'USDA' },
+  pasta: { name: 'Pasta, dry', kcal: 371, protein: 13.0, fat: 1.5, carbs: 75, audPerKg: 2.5, src: 'USDA' },
+  oats: { name: 'Rolled oats', kcal: 379, protein: 13.2, fat: 6.5, carbs: 67.7, audPerKg: 3, src: 'USDA' },
+  potato: { name: 'Potato', kcal: 77, protein: 2.0, fat: 0.1, carbs: 17.5, audPerKg: 3, src: 'USDA' },
+  sweet_potato: { name: 'Sweet potato', kcal: 86, protein: 1.6, fat: 0.1, carbs: 20.1, audPerKg: 5, src: 'USDA' },
+  onion: { name: 'Brown onion', kcal: 40, protein: 1.1, fat: 0.1, carbs: 9.3, audPerKg: 3, src: 'USDA' },
+  frozen_veg: { name: 'Frozen mixed veg', kcal: 65, protein: 3.3, fat: 0.5, carbs: 13, audPerKg: 4, src: 'USDA' },
+  tomato_tin: { name: 'Crushed tomatoes, tinned', kcal: 32, protein: 1.6, fat: 0.3, carbs: 7.3, audPerKg: 3, src: 'USDA' },
+  chickpeas: { name: 'Chickpeas, tinned, drained', kcal: 138, protein: 7.0, fat: 2.8, carbs: 22.5, audPerKg: 4.5, src: 'USDA' },
+  coconut_milk: { name: 'Coconut milk, tinned', kcal: 197, protein: 2.0, fat: 21.3, carbs: 2.8, audPerKg: 5, src: 'USDA' },
+  curry_paste: { name: 'Curry paste (jar)', kcal: 130, protein: 2.5, fat: 8, carbs: 12, audPerKg: 15, src: 'label approx' },
+  harissa: { name: 'Harissa paste', kcal: 120, protein: 3, fat: 8, carbs: 10, audPerKg: 25, src: 'label approx' },
+  peri_peri: { name: 'Peri-peri sauce', kcal: 60, protein: 1, fat: 3, carbs: 7, audPerKg: 15, src: 'label approx' },
+  teriyaki: { name: 'Teriyaki sauce', kcal: 89, protein: 5.9, fat: 0, carbs: 15.6, audPerKg: 10, src: 'USDA' },
+  soy_sauce: { name: 'Soy sauce', kcal: 53, protein: 8.1, fat: 0.6, carbs: 4.9, audPerKg: 8, src: 'USDA' },
+  honey: { name: 'Honey', kcal: 304, protein: 0.3, fat: 0, carbs: 82.4, audPerKg: 10, src: 'USDA' },
+  olive_oil: { name: 'Olive oil', kcal: 884, protein: 0, fat: 100, carbs: 0, audPerKg: 14, src: 'USDA' },
+  peanut_butter: { name: 'Peanut butter', kcal: 588, protein: 25, fat: 50, carbs: 20, audPerKg: 8, src: 'USDA' },
+  mixed_nuts: { name: 'Mixed nuts', kcal: 607, protein: 20, fat: 54, carbs: 21, audPerKg: 25, src: 'USDA' },
+  banana: { name: 'Banana', kcal: 89, protein: 1.1, fat: 0.3, carbs: 22.8, audPerKg: 4, src: 'USDA' },
+  whey: { name: 'Whey protein (WPC)', kcal: 400, protein: 78, fat: 6, carbs: 8, audPerKg: 40, src: 'label approx' },
+  soy_milk: { name: 'Soy milk, regular', kcal: 54, protein: 3.3, fat: 1.8, carbs: 6.3, audPerKg: 2.5, src: 'USDA' },
+  greek_yoghurt: { name: 'Greek yoghurt, full fat', kcal: 97, protein: 9.0, fat: 5.0, carbs: 4.0, audPerKg: 7, src: 'USDA' },
+  wraps: { name: 'Flour wraps', kcal: 310, protein: 8.5, fat: 7.5, carbs: 50, audPerKg: 10, src: 'USDA approx' },
+  hummus: { name: 'Hummus', kcal: 166, protein: 7.9, fat: 9.6, carbs: 14.3, audPerKg: 14, src: 'USDA' },
+});

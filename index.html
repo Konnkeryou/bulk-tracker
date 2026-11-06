@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111418">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Bulk">
+  <title>Bulk Tracker</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="view" aria-live="polite"><p class="muted">Loading…</p></main>
+  <div id="toast" class="toast" role="status"></div>
+  <nav id="tabs" aria-label="Sections">
+    <button data-tab="today">Today</button>
+    <button data-tab="train">Train</button>
+    <button data-tab="food">Food</button>
+    <button data-tab="body">Body</button>
+    <button data-tab="review">Review</button>
+    <button data-tab="more">More</button>
+  </nav>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
